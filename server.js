@@ -6,8 +6,15 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
 
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname+'/html/index.html');
+})
+app.use('/static',express.static('static'));
 io.on('connection',(socket)=>{
-    console.log(`new connection (id ${socket.id})`)
+    console.log(`new connection (id ${socket.id})`);
+    socket.on('send',(data)=>{
+        console.log(`new message from socket ${socket.id}: ${data}`);
+    });
 })
 
 const port = process.env.PORT;
