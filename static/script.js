@@ -13,3 +13,13 @@ document.addEventListener('keypress',(e)=>{
         send();
     }
 })
+socket.on('receive',(data)=>{
+    console.log(`message ${data.message} from ${data.name}`);
+    var messageDiv = document.createElement('div');
+    var messageText = document.createElement('p');
+    messageText.innerHTML = `${data.name}: ${data.message}`;
+    messageDiv.classList.add('message');
+    messageText.classList.add('messageText');
+    messageDiv.appendChild(messageText)
+    document.getElementById('chatbox').appendChild(messageDiv)
+})

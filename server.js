@@ -14,6 +14,10 @@ io.on('connection',(socket)=>{
     console.log(`new connection (id ${socket.id})`);
     socket.on('send',(data)=>{
         console.log(`new message from socket ${socket.id}: ${data}`);
+        io.emit('receive',{
+            name:socket.id,
+            message:data
+        });
     });
 })
 

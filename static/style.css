@@ -22,6 +22,7 @@ html,body{
 .chatbox{
     width:100%;
     height: 80vh;
+    overflow: scroll;
 }
 .input{
     height: 10vh;
@@ -48,4 +49,17 @@ html,body{
 .input > button > i{
     color: white;
     font-size: 4vh;
+}
+.message{
+    height:10vh;
+    width:calc(100% - 2vh);
+    background-color: grey;
+    font-family: 'Quicksand',sans-serif;
+    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.messageText{
+    overflow-wrap: break-word;
 }
