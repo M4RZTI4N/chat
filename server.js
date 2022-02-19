@@ -10,21 +10,15 @@ app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/html/index.html');
 })
 app.use('/static',express.static('static'));
-
-var nameMap = {}
-
-
 io.on('connection',(socket)=>{
-
+    console.log(`new connection (id ${socket.id})`);
     socket.on('send',(data)=>{
+        console.log(`new message from socket ${socket.id}: ${data}`);
         io.emit('receive',{
-            name:nameMap[socket.id],
+            name:socket.id,
             message:data
         });
     });
-    socket.on('login',(data)=>{
-        nameMap[socket.id] = data;
-    })
 })
 
 const port = process.env.PORT;
