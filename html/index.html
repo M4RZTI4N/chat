@@ -12,13 +12,22 @@
     <title>Chat</title>
 </head>
 <body>
-    <!-- test -->
     <div class="navbar"><h1>Chat</h1></div>
-    <div class="chatbox" id="chatbox"></div>
-    <div class="input">
-        <input type="text" id="message" placeholder="Enter a message:">
-        <button id="send"><i class="fa-solid fa-paper-plane"></i></button>
+    <div id="login">
+        <div id="loginGrid">
+            <h1>Login</h1>
+            <input type="text" id="name" placeholder="Enter Username:">
+            <button id="loginButton">Login</button>
+        </div>
     </div>
+    <div id="chat">
+        <div class="chatbox" id="chatbox"></div>
+        <div class="input">
+            <input type="text" id="message" placeholder="Enter a message:">
+            <button id="send"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+    
     <script src="/socket.io/socket.io.js"></script>
     <script src="static/script.js"></script>
 </body>

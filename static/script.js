@@ -1,6 +1,13 @@
 const socket = io();
 const message = document.getElementById('message');
 const button = document.getElementById('send');
+const login = document.getElementById('loginButton');
+
+login.addEventListener('click',()=>{
+    document.getElementById('chat').style.display = 'block';
+    document.getElementById('login').style.display = 'none';
+    socket.emit('login',document.getElementById('name').value)
+})
 function send(){
     socket.emit('send',message.value);
     message.value = '';
