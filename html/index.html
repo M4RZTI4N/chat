@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/69a3201997.js" crossorigin="anonymous"></script>
+    <title>Chat</title>
+</head>
+<body>
+    <div class="navbar"><h1>Chat</h1></div>
+    <div class="chatbox" id="chatbox"></div>
+    <div class="input">
+        <input type="text" id="message" placeholder="Enter a message:">
+        <button id="send"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="static/script.js"></script>
+</body>
+</html>
