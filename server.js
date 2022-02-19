@@ -6,19 +6,22 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
 
+var nameMap = {}
+
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/html/index.html');
 })
 app.use('/static',express.static('static'));
 io.on('connection',(socket)=>{
-    console.log(`new connection (id ${socket.id})`);
     socket.on('send',(data)=>{
-        console.log(`new message from socket ${socket.id}: ${data}`);
         io.emit('receive',{
-            name:socket.id,
+            name:nameMap[socket.id],
             message:data
         });
     });
+    socket.on('login',(username)=>{
+        nameMap[socket.id] = username;
+    })
 })
 
 const port = process.env.PORT;
