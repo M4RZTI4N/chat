@@ -61,5 +61,41 @@ html,body{
     justify-content: center;
 }
 .messageText{
+    font-size: 5vh;
     overflow-wrap: break-word;
+}
+#login{
+    height:90vh;
+    width:100%;
+    position: relative;
+}
+#chat{
+    display: none;
+}
+#loginFlex{
+    position: absolute;
+    width:40%;
+    left:30%;
+    height:60vh;
+    top:10vh;
+    border: 1vh solid black;
+    font-family: 'Quicksand',sans-serif;
+    display: grid;
+    grid-template-rows: 30vh 15vh 15vh;
+    grid-template-columns: 100%;
+}
+#loginButton{
+    font-family: 'Quicksand',sans-serif;
+    border: none;
+    grid-area: 3/1/4/1;
+    font-size:6vh;
+}
+#name{
+    font-family: 'Quicksand',sans-serif;
+    grid-area: 2/1/3/1;
+    font-size: 6vh;
+}
+#loginFlex > h1{
+    margin-left: 1vh;
+    font-size: 10vh;
 }
